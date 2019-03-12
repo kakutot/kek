@@ -18,6 +18,8 @@ public interface CollectionsContract {
     interface CollectionsPresenter extends
             BaseContract.BasePresenter<CollectionsView> {
 
+        void showRestaurantsScreen(@NonNull Collection collection);
+
         void search(@NonNull String cityName);
     }
 }
