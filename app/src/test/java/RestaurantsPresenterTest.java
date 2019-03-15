@@ -84,7 +84,9 @@ public class RestaurantsPresenterTest {
 
         doReturn(Single.just(fakeRestaurants)).when(restaurantRepository)
                 .getRestaurantsByCollectionId(FAKE_RESTAURANT_NAME,
-                        FAKE_COLLECTION_ID, FAKE_START, FAKE_COUNT);
+                                              FAKE_COLLECTION_ID,
+                                              FAKE_START,
+                                              FAKE_COUNT);
     }
 
     private void initFakeCollection() {
@@ -135,7 +137,9 @@ public class RestaurantsPresenterTest {
 
     private void initPresenter() {
         restaurantsPresenter = new RestaurantsPresenter(backgroundScheduler,
-                mainScheduler, router, restaurantRepository);
+                                                        mainScheduler,
+                                                        router,
+                                                        restaurantRepository);
         restaurantsPresenter.attachView(view);
     }
 
@@ -168,7 +172,9 @@ public class RestaurantsPresenterTest {
 
         InOrder inOrder = Mockito.inOrder(view, restaurantRepository);
         inOrder.verify(restaurantRepository).getRestaurantsByCollectionId(FAKE_RESTAURANT_NAME,
-                FAKE_COLLECTION_ID, FAKE_START, FAKE_COUNT);
+                                                                          FAKE_COLLECTION_ID,
+                                                                          FAKE_START,
+                                                                          FAKE_COUNT);
         inOrder.verify(view).showLoading();
         inOrder.verify(view).hideLoading();
         inOrder.verify(view).onRestaurantsListLoaded(fakeRestaurants);
@@ -178,16 +184,20 @@ public class RestaurantsPresenterTest {
     @Test
     public void testSearchEmptyQuery() {
         when(restaurantRepository.getRestaurantsByCollectionId(FAKE_EMPTY_RESTAURANT_NAME,
-                FAKE_COLLECTION_ID, FAKE_START, FAKE_COUNT)).thenReturn(Single.just(fakeRestaurants));
+                                                               FAKE_COLLECTION_ID,
+                                                               FAKE_START,
+                                                               FAKE_COUNT))
+                .thenReturn(Single.just(fakeRestaurants));
 
-        restaurantsPresenter.search(FAKE_EMPTY_RESTAURANT_NAME,
-                fakeCollection, FAKE_START, FAKE_COUNT);
+        restaurantsPresenter.search(FAKE_EMPTY_RESTAURANT_NAME, fakeCollection, FAKE_START, FAKE_COUNT);
         backgroundScheduler.triggerActions();
         mainScheduler.triggerActions();
 
         InOrder inOrder = Mockito.inOrder(view, restaurantRepository);
         inOrder.verify(restaurantRepository).getRestaurantsByCollectionId(FAKE_EMPTY_RESTAURANT_NAME,
-                FAKE_COLLECTION_ID, FAKE_START, FAKE_COUNT);
+                                                                          FAKE_COLLECTION_ID,
+                                                                          FAKE_START,
+                                                                          FAKE_COUNT);
         inOrder.verify(view).showLoading();
         inOrder.verify(view).hideLoading();
         inOrder.verify(view).onRestaurantsListLoaded(anyListOf(Restaurant.class));
@@ -197,7 +207,9 @@ public class RestaurantsPresenterTest {
     @Test
     public void testSearchError() {
         restaurantsPresenter.search(FAKE_EMPTY_RESTAURANT_NAME,
-                fakeCollection, FAKE_BAD_START, FAKE_BAD_COUNT);
+                                    fakeCollection,
+                                    FAKE_BAD_START,
+                                    FAKE_BAD_COUNT);
         backgroundScheduler.triggerActions();
         mainScheduler.triggerActions();
 

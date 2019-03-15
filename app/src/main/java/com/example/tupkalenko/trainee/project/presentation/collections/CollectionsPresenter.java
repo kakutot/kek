@@ -35,13 +35,15 @@ public class CollectionsPresenter
 
     @Override
     public void search(@NonNull String cityName) {
-            Single chain = cityRepository.getCity(cityName)
-                            .doOnSubscribe(disposable -> getView().showLoading())
-                            .map(City::getId)
-                            .flatMap(collectionRepository::getCollectionsByCityId)
-                            .doOnTerminate(() -> getView().hideLoading());
+        Single chain = cityRepository.getCity(cityName)
+                .doOnSubscribe(disposable -> getView()
+                .showLoading())
+                .map(City::getId)
+                .flatMap(collectionRepository::getCollectionsByCityId)
+                .doOnTerminate(() -> getView()
+                .hideLoading());
 
-            subscribe(chain, this::onSuccess, this::onError);
+        subscribe(chain, this::onSuccess, this::onError);
     }
 
     private void onSuccess(@NonNull List<Collection> collections) {

@@ -5,14 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
 
 public abstract class BaseFragment<P extends BaseContract.BasePresenter>
         extends Fragment implements BaseContract.BaseView<P> {
@@ -23,7 +23,8 @@ public abstract class BaseFragment<P extends BaseContract.BasePresenter>
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), container, false);
         unbinder = ButterKnife.bind(this, view);
 

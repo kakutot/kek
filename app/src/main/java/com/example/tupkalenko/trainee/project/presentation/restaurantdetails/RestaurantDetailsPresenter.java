@@ -9,7 +9,8 @@ import androidx.annotation.NonNull;
 import io.reactivex.Scheduler;
 import io.reactivex.Single;
 
-public class RestaurantDetailsPresenter extends BasePresenter<RestaurantDetailsContract.RestaurantsDetailsView, RestaurantDetailsScreenRouter>
+public class RestaurantDetailsPresenter
+        extends BasePresenter<RestaurantDetailsContract.RestaurantsDetailsView, RestaurantDetailsScreenRouter>
         implements RestaurantDetailsContract.RestaurantDetailsPresenter {
 
     @NonNull
@@ -26,12 +27,14 @@ public class RestaurantDetailsPresenter extends BasePresenter<RestaurantDetailsC
     @Override
     public void loadDetails(@NonNull Restaurant restaurant) {
         Single chain = restaurantRepository.getRestaurant(restaurant.getId())
-                .doOnSubscribe(disposable -> getView().showLoading())
-                .doOnTerminate(() -> getView().hideLoading());
+                .doOnSubscribe(disposable -> getView()
+                .showLoading())
+                .doOnTerminate(() -> getView()
+                .hideLoading());
 
         subscribe(chain, this::onSuccess, this::onError);
     }
-    
+
     private void onSuccess(@NonNull Restaurant restaurant) {
         if (isViewAttached()) {
             getView().onRestaurantLoaded(restaurant);

@@ -1,9 +1,9 @@
 package com.example.tupkalenko.trainee.project.presentation.restaurantdetails;
 
-import androidx.annotation.NonNull;
-
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
 import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+
+import androidx.annotation.NonNull;
 
 public interface RestaurantDetailsContract {
 

@@ -13,7 +13,6 @@ import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.robolectric.RobolectricTestRunner;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -84,7 +83,10 @@ public class CollectionsPresenterTest {
 
     private void initPresenter() {
         collectionsPresenter = new CollectionsPresenter(backgroundScheduler,
-                mainScheduler, router, collectionRepository, cityRepository);
+                                                        mainScheduler,
+                                                        router,
+                                                        collectionRepository,
+                                                        cityRepository);
 
         collectionsPresenter.attachView(view);
     }

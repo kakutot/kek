@@ -1,10 +1,8 @@
 package com.example.tupkalenko.trainee.project.domain.repository;
 
-import androidx.annotation.NonNull;
-
 import com.example.tupkalenko.trainee.project.domain.entity.City;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import io.reactivex.Single;
 
 public interface CityRepository {

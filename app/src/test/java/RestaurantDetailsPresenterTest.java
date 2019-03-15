@@ -85,13 +85,15 @@ public class RestaurantDetailsPresenterTest {
 
     private void initPresenter() {
         restaurantDetailsPresenter = new RestaurantDetailsPresenter(backgroundScheduler,
-                mainScheduler, router, restaurantRepository);
+                                                                    mainScheduler,
+                                                                    router,
+                                                                    restaurantRepository);
         restaurantDetailsPresenter.attachView(view);
     }
 
     @Test
     public void testSearchSuccess() {
-        restaurantDetailsPresenter.search(fakeRestaurant);
+        restaurantDetailsPresenter.loadDetails(fakeRestaurant);
         backgroundScheduler.triggerActions();
         mainScheduler.triggerActions();
 
@@ -105,7 +107,7 @@ public class RestaurantDetailsPresenterTest {
 
     @Test
     public void testSearchError() {
-        restaurantDetailsPresenter.search(fakeBadRestaurant);
+        restaurantDetailsPresenter.loadDetails(fakeBadRestaurant);
         backgroundScheduler.triggerActions();
         mainScheduler.triggerActions();
 

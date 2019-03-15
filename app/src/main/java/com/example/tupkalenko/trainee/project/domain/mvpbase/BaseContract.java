@@ -1,8 +1,8 @@
 package com.example.tupkalenko.trainee.project.domain.mvpbase;
 
-import androidx.annotation.NonNull;
-
 import com.example.tupkalenko.trainee.project.domain.navigation.Router;
+
+import androidx.annotation.NonNull;
 
 public interface BaseContract {
 
