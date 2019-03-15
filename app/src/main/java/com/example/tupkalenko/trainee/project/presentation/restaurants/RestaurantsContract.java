@@ -19,5 +19,7 @@ public interface RestaurantsContract {
             extends BaseContract.BasePresenter<RestaurantsContract.RestaurantsView> {
 
         void search(int collectionId, int start, int count);
+
+        void showRestaurantDetails(@NonNull Restaurant restaurant);
     }
 }

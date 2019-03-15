@@ -16,7 +16,7 @@ public interface BaseContract {
 
         void hideRetry();
 
-        void showLoadingError();
+        void showUnexpectedError(@NonNull Throwable throwable);
     }
 
     interface BasePresenter<V extends BaseView> {
@@ -34,5 +34,7 @@ public interface BaseContract {
         Router getRouter();
 
         void navigateBack();
+
+        void onError(@NonNull Throwable throwable);
     }
 }

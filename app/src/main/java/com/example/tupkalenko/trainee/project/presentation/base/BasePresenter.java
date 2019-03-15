@@ -4,16 +4,17 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.tupkalenko.trainee.project.RxExecutor;
 import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
 import com.example.tupkalenko.trainee.project.domain.navigation.Router;
 
 import java.util.Objects;
 
 import androidx.annotation.Nullable;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.Scheduler;
 
 public abstract class BasePresenter<V extends BaseContract.BaseView, R extends Router>
+        extends RxExecutor
         implements BaseContract.BasePresenter<V> {
 
     private final static String TAG = BasePresenter.class.getName();
@@ -22,39 +23,19 @@ public abstract class BasePresenter<V extends BaseContract.BaseView, R extends R
     private final R router;
 
     @Nullable
-    private CompositeDisposable compositeDisposable;
-
-    @Nullable
     private V view;
 
-    public BasePresenter(@NonNull R router) {
+    public BasePresenter(@NonNull Scheduler backgroundScheduler,
+                         @NonNull Scheduler foregroundScheduler,
+                         @NonNull R router) {
+        super(backgroundScheduler, foregroundScheduler);
         this.router = router;
-    }
-
-    protected void clearResources() {
-        if (compositeDisposable != null) {
-            compositeDisposable.clear();
-        } else {
-            Log.e(TAG, "Composite disposable can't be null!");
-        }
-    }
-
-    protected void addDisposable(@NonNull Disposable disposable) {
-        if (disposable != null) {
-            compositeDisposable.add(disposable);
-        } else {
-            Log.e(TAG, "Composite disposable can't be null!");
-        }
     }
 
     @Override
     public void attachView(@NonNull V view) {
         this.view = view;
-        createResources();
-    }
-
-    private void createResources() {
-        compositeDisposable = new CompositeDisposable();
+        initResources();
     }
 
     @Override
@@ -78,5 +59,16 @@ public abstract class BasePresenter<V extends BaseContract.BaseView, R extends R
     @Override
     public R getRouter() {
         return router;
+    }
+
+    @Override
+    public void navigateBack() {
+        getRouter().navigateBack();
+    }
+
+    @Override
+    public void onError(@NonNull Throwable throwable) {
+        getView().showUnexpectedError(throwable);
+        Log.e(TAG, Log.getStackTraceString(throwable));
     }
 }
