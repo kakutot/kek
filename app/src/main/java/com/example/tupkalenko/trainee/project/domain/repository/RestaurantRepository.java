@@ -11,7 +11,8 @@ import io.reactivex.Single;
 public interface RestaurantRepository {
 
     @NonNull
-    Single<List<Restaurant>> getRestaurantsByCollectionId(int collectionId, int start, int count);
+    Single<List<Restaurant>> getRestaurantsByCollectionId(@NonNull String restaurantName,
+                                                          int collectionId, int start, int count);
 
     @NonNull
     Single<Restaurant> getRestaurant(int restaurantId);
