@@ -45,7 +45,7 @@ public class CollectionsPresenter
     }
 
     private void onSuccess(@NonNull List<Collection> collections) {
-        if(isViewAttached()) {
+        if (isViewAttached()) {
             getView().onCollectionsLoaded(collections);
         }
     }
