@@ -16,6 +16,6 @@ public interface RestaurantDetailsContract {
     interface RestaurantDetailsPresenter
             extends BaseContract.BasePresenter<RestaurantDetailsContract.RestaurantsDetailsView> {
 
-        void search(int restaurantId);
+        void loadDetails(@NonNull Restaurant restaurant);
     }
 }

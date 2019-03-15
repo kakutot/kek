@@ -86,6 +86,7 @@ public class RestaurantsPresenterTest {
                 .getRestaurantsByCollectionId(FAKE_RESTAURANT_NAME,
                         FAKE_COLLECTION_ID, FAKE_START, FAKE_COUNT);
     }
+
     private void initFakeCollection() {
         fakeCollection = new Collection();
 
