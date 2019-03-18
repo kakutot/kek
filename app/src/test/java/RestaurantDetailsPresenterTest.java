@@ -1,10 +1,10 @@
 import com.example.tupkalenko.trainee.project.domain.entity.Location;
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
 import com.example.tupkalenko.trainee.project.domain.entity.UserRating;
-import com.example.tupkalenko.trainee.project.domain.navigation.RestaurantDetailsScreenRouter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.RestaurantDetailsScreenRouter;
 import com.example.tupkalenko.trainee.project.domain.repository.RestaurantRepository;
-import com.example.tupkalenko.trainee.project.presentation.restaurantdetails.RestaurantDetailsContract;
-import com.example.tupkalenko.trainee.project.presentation.restaurantdetails.RestaurantDetailsPresenter;
+import com.example.tupkalenko.trainee.project.mvp.contract.RestaurantDetailsContract;
+import com.example.tupkalenko.trainee.project.mvp.presenter.RestaurantDetailsPresenter;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith (MockitoJUnitRunner.class)
 public class RestaurantDetailsPresenterTest {
 
     private final static int FAKE_RESTAURANT_ID = 1;

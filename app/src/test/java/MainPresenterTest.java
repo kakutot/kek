@@ -1,6 +1,6 @@
-import com.example.tupkalenko.trainee.project.domain.navigation.MainRouter;
-import com.example.tupkalenko.trainee.project.presentation.main.MainContract;
-import com.example.tupkalenko.trainee.project.presentation.main.MainPresenter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.MainRouter;
+import com.example.tupkalenko.trainee.project.mvp.contract.MainContract;
+import com.example.tupkalenko.trainee.project.mvp.presenter.MainPresenter;
 
 import org.junit.Before;
 import org.junit.Test;

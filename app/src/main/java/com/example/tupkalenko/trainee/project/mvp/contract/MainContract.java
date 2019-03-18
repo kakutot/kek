@@ -1,6 +1,6 @@
-package com.example.tupkalenko.trainee.project.presentation.main;
+package com.example.tupkalenko.trainee.project.mvp.contract;
 
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+import com.example.tupkalenko.trainee.project.mvp.BaseContract;
 
 public interface MainContract {
 

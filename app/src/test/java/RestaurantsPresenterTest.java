@@ -2,10 +2,10 @@ import com.example.tupkalenko.trainee.project.domain.entity.Collection;
 import com.example.tupkalenko.trainee.project.domain.entity.Location;
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
 import com.example.tupkalenko.trainee.project.domain.entity.UserRating;
-import com.example.tupkalenko.trainee.project.domain.navigation.RestaurantsScreenRouter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.RestaurantsScreenRouter;
 import com.example.tupkalenko.trainee.project.domain.repository.RestaurantRepository;
-import com.example.tupkalenko.trainee.project.presentation.restaurants.RestaurantsContract;
-import com.example.tupkalenko.trainee.project.presentation.restaurants.RestaurantsPresenter;
+import com.example.tupkalenko.trainee.project.mvp.contract.RestaurantsContract;
+import com.example.tupkalenko.trainee.project.mvp.presenter.RestaurantsPresenter;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,31 +31,31 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith (MockitoJUnitRunner.class)
 public class RestaurantsPresenterTest {
 
-    private final static int FAKE_COLLECTION_ID = 2;
-    private final static String FAKE_IMAGE_URL = "url";
-    private final static int FAKE_RESULTS_COUNT = 1;
-    private final static String FAKE_TITLE = "title";
-    private final static int FAKE_START = 0;
-    private final static int FAKE_BAD_START = -1;
-    private final static int FAKE_COUNT = 2;
-    private final static int FAKE_BAD_COUNT = -1;
+    private static final int FAKE_COLLECTION_ID = 2;
+    private static final String FAKE_IMAGE_URL = "url";
+    private static final int FAKE_RESULTS_COUNT = 1;
+    private static final String FAKE_TITLE = "title";
+    private static final int FAKE_START = 0;
+    private static final int FAKE_BAD_START = -1;
+    private static final int FAKE_COUNT = 2;
+    private static final int FAKE_BAD_COUNT = -1;
 
-    private final static int FAKE_RESTAURANT_ID = 1;
-    private final static String FAKE_RESTAURANT_NAME = "test";
+    private static final int FAKE_RESTAURANT_ID = 1;
+    private static final String FAKE_RESTAURANT_NAME = "test";
     private static final float FAKE_AVERAGE_COST_FOR_TWO = 34.5f;
     private static final String FAKE_CURRENCY = "$";
     private static final String FAKE_FEATURED_IMAGE = "https://testhost/testpath";
 
-    private final static int FAKE_RESTAURANT_2_ID = 1;
-    private final static String FAKE_RESTAURANT_2_NAME = "test";
+    private static final int FAKE_RESTAURANT_2_ID = 1;
+    private static final String FAKE_RESTAURANT_2_NAME = "test";
     private static final float FAKE_AVERAGE_COST_FOR_TWO_2 = 34.5f;
     private static final String FAKE_CURRENCY_2 = "€";
     private static final String FAKE_FEATURED_IMAGE_2 = "https://testhost/testpath2";
 
-    private final static String FAKE_EMPTY_RESTAURANT_NAME = "";
+    private static final String FAKE_EMPTY_RESTAURANT_NAME = "";
 
     @Mock
     private RestaurantRepository restaurantRepository;
@@ -215,7 +215,9 @@ public class RestaurantsPresenterTest {
 
         InOrder inOrder = Mockito.inOrder(view, restaurantRepository);
         inOrder.verify(restaurantRepository, never()).getRestaurantsByCollectionId(anyString(),
-                anyInt(), anyInt(), anyInt());
+                                                                                   anyInt(),
+                                                                                   anyInt(),
+                                                                                   anyInt());
         inOrder.verify(view, never()).showLoading();
         inOrder.verify(view, never()).hideLoading();
         inOrder.verify(view, never()).onRestaurantsListLoaded(anyListOf(Restaurant.class));

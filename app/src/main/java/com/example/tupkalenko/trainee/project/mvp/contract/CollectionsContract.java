@@ -1,7 +1,7 @@
-package com.example.tupkalenko.trainee.project.presentation.collections;
+package com.example.tupkalenko.trainee.project.mvp.contract;
 
 import com.example.tupkalenko.trainee.project.domain.entity.Collection;
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+import com.example.tupkalenko.trainee.project.mvp.BaseContract;
 
 import java.util.List;
 

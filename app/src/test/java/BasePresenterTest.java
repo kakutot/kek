@@ -1,6 +1,6 @@
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
-import com.example.tupkalenko.trainee.project.domain.navigation.Router;
-import com.example.tupkalenko.trainee.project.presentation.base.BasePresenter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.Router;
+import com.example.tupkalenko.trainee.project.mvp.BaseContract;
+import com.example.tupkalenko.trainee.project.mvp.BasePresenter;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-@RunWith(RobolectricTestRunner.class)
+@RunWith (RobolectricTestRunner.class)
 public class BasePresenterTest {
 
     private BasePresenter basePresenter;
@@ -25,7 +25,7 @@ public class BasePresenterTest {
     private Router router;
 
     @Before
-    public void setUp () {
+    public void setUp() {
         initSchedulers();
         initRouter();
         initPresenter();
@@ -57,20 +57,20 @@ public class BasePresenterTest {
         assertEquals(mockView, basePresenter.getView());
     }
 
-    @Test()
+    @Test ()
     public void testGetViewReturnsView() {
         basePresenter.attachView(mockView);
 
         Assert.assertNotNull(basePresenter.getView());
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test (expected = NullPointerException.class)
     public void testGetViewForNullableViewThrowsNPE() {
         basePresenter.attachView(null);
         basePresenter.getView();
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test (expected = NullPointerException.class)
     public void testViewIsDetached() {
         basePresenter.detachView();
         basePresenter.getView();

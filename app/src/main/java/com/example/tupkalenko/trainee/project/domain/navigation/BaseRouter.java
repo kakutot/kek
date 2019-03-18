@@ -1,4 +1,4 @@
-package com.example.tupkalenko.trainee.project.presentation.navigation;
+package com.example.tupkalenko.trainee.project.domain.navigation;
 
 import android.content.Intent;
 

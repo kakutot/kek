@@ -1,11 +1,12 @@
-package com.example.tupkalenko.trainee.project.presentation.collections;
+package com.example.tupkalenko.trainee.project.mvp.presenter;
 
 import com.example.tupkalenko.trainee.project.domain.entity.City;
 import com.example.tupkalenko.trainee.project.domain.entity.Collection;
-import com.example.tupkalenko.trainee.project.domain.navigation.CollectionsScreenRouter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.CollectionsScreenRouter;
 import com.example.tupkalenko.trainee.project.domain.repository.CityRepository;
 import com.example.tupkalenko.trainee.project.domain.repository.CollectionRepository;
-import com.example.tupkalenko.trainee.project.presentation.base.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.contract.CollectionsContract;
 
 import java.util.List;
 

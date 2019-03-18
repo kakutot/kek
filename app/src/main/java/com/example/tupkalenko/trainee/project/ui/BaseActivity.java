@@ -1,8 +1,8 @@
-package com.example.tupkalenko.trainee.project.presentation.base;
+package com.example.tupkalenko.trainee.project.ui;
 
 import android.os.Bundle;
 
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+import com.example.tupkalenko.trainee.project.mvp.BaseContract;
 
 import androidx.annotation.CallSuper;
 import androidx.annotation.LayoutRes;
@@ -11,7 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 
-public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<P extends BaseContract.BasePresenter>
+        extends AppCompatActivity {
 
     @CallSuper
     @Override
