@@ -2,14 +2,14 @@ package com.example.tupkalenko.trainee.project.presentation.base;
 
 import android.os.Bundle;
 
+import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+
 import androidx.annotation.CallSuper;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
-
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
 
 public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends AppCompatActivity {
 

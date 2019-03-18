@@ -52,7 +52,7 @@ public class RxExecutor {
 
     private void addDisposable(@NonNull Disposable disposable) {
         if (disposable != null) {
-           compositeDisposable.add(disposable);
+            compositeDisposable.add(disposable);
         } else {
             Log.e(TAG, "Composite disposable can't be null!");
         }

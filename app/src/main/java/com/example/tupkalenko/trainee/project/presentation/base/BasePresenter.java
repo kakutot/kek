@@ -2,14 +2,13 @@ package com.example.tupkalenko.trainee.project.presentation.base;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import com.example.tupkalenko.trainee.project.RxExecutor;
 import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
 import com.example.tupkalenko.trainee.project.domain.navigation.Router;
 
 import java.util.Objects;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import io.reactivex.Scheduler;
 

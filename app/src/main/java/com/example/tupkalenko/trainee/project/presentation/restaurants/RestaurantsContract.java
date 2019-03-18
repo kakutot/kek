@@ -1,12 +1,12 @@
 package com.example.tupkalenko.trainee.project.presentation.restaurants;
 
-import androidx.annotation.NonNull;
-
 import com.example.tupkalenko.trainee.project.domain.entity.Collection;
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
 import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
 
 public interface RestaurantsContract {
 

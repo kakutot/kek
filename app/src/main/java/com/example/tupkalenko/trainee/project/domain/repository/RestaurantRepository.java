@@ -1,11 +1,10 @@
 package com.example.tupkalenko.trainee.project.domain.repository;
 
-import androidx.annotation.NonNull;
-
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import io.reactivex.Single;
 
 public interface RestaurantRepository {

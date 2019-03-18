@@ -32,7 +32,7 @@ public class RestaurantsPresenter
     }
 
     private void onSuccess(@NonNull List<Restaurant> restaurants) {
-        if(isViewAttached()) {
+        if (isViewAttached()) {
             getView().onRestaurantsListLoaded(restaurants);
         }
     }
@@ -41,10 +41,14 @@ public class RestaurantsPresenter
     public void search(@NonNull String restaurantName,
                        @NonNull Collection collection, int start, int count) {
         if (start >= 0 && count > 0) {
-            Single chain = restaurantRepository
-                    .getRestaurantsByCollectionId(restaurantName, collection.getId(), start, count)
-                    .doOnSubscribe(disposable -> getView().showLoading())
-                    .doOnTerminate(() -> getView().hideLoading());
+            Single chain = restaurantRepository.getRestaurantsByCollectionId(restaurantName,
+                                                                             collection.getId(),
+                                                                             start,
+                                                                             count)
+                            .doOnSubscribe(disposable -> getView()
+                            .showLoading())
+                            .doOnTerminate(() -> getView()
+                            .hideLoading());
 
             subscribe(chain, this::onSuccess, this::onError);
         } else {
