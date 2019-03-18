@@ -1,6 +1,8 @@
-package com.example.tupkalenko.trainee.project;
+package com.example.tupkalenko.trainee.project.presentation.main;
 
 import android.os.Bundle;
+
+import com.example.tupkalenko.trainee.project.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
