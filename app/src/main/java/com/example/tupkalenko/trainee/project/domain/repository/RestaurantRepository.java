@@ -11,7 +11,9 @@ public interface RestaurantRepository {
 
     @NonNull
     Single<List<Restaurant>> getRestaurantsByCollectionId(@NonNull String restaurantName,
-                                                          int collectionId, int start, int count);
+                                                          int collectionId,
+                                                          int start,
+                                                          int count);
 
     @NonNull
     Single<Restaurant> getRestaurant(int restaurantId);

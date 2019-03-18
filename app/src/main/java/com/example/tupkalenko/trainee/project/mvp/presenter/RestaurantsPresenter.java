@@ -1,12 +1,13 @@
-package com.example.tupkalenko.trainee.project.presentation.restaurants;
+package com.example.tupkalenko.trainee.project.mvp.presenter;
 
 import android.util.Log;
 
 import com.example.tupkalenko.trainee.project.domain.entity.Collection;
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
-import com.example.tupkalenko.trainee.project.domain.navigation.RestaurantsScreenRouter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.RestaurantsScreenRouter;
 import com.example.tupkalenko.trainee.project.domain.repository.RestaurantRepository;
-import com.example.tupkalenko.trainee.project.presentation.base.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.contract.RestaurantsContract;
 
 import java.util.List;
 

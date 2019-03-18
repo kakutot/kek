@@ -1,8 +1,8 @@
-package com.example.tupkalenko.trainee.project;
+package com.example.tupkalenko.trainee.project.mvp;
 
 import android.util.Log;
 
-import com.example.tupkalenko.trainee.project.presentation.base.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.BasePresenter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

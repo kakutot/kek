@@ -1,9 +1,10 @@
-package com.example.tupkalenko.trainee.project.presentation.restaurantdetails;
+package com.example.tupkalenko.trainee.project.mvp.presenter;
 
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
-import com.example.tupkalenko.trainee.project.domain.navigation.RestaurantDetailsScreenRouter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.RestaurantDetailsScreenRouter;
 import com.example.tupkalenko.trainee.project.domain.repository.RestaurantRepository;
-import com.example.tupkalenko.trainee.project.presentation.base.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.contract.RestaurantDetailsContract;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Scheduler;

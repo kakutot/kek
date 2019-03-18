@@ -1,5 +1,7 @@
 package com.example.tupkalenko.trainee.project.domain.entity;
 
+import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -47,5 +49,22 @@ public final class City {
 
     public void setCountryName(@NonNull String countryName) {
         this.countryName = countryName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City city = (City)o;
+
+        return id == city.id &&
+               countryId == city.countryId &&
+               Objects.equals(name, city.name) &&
+               Objects.equals(countryName, city.countryName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, countryId, countryName);
     }
 }

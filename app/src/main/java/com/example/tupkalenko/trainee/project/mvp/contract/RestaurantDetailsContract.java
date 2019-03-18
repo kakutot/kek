@@ -1,20 +1,20 @@
-package com.example.tupkalenko.trainee.project.presentation.restaurantdetails;
+package com.example.tupkalenko.trainee.project.mvp.contract;
 
 import com.example.tupkalenko.trainee.project.domain.entity.Restaurant;
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+import com.example.tupkalenko.trainee.project.mvp.BaseContract;
 
 import androidx.annotation.NonNull;
 
 public interface RestaurantDetailsContract {
 
     interface RestaurantsDetailsView extends
-            BaseContract.BaseView<RestaurantDetailsContract.RestaurantDetailsPresenter> {
+            BaseContract.BaseView<RestaurantDetailsPresenter> {
 
         void onRestaurantLoaded(@NonNull Restaurant restaurant);
     }
 
     interface RestaurantDetailsPresenter
-            extends BaseContract.BasePresenter<RestaurantDetailsContract.RestaurantsDetailsView> {
+            extends BaseContract.BasePresenter<RestaurantsDetailsView> {
 
         void loadDetails(@NonNull Restaurant restaurant);
     }

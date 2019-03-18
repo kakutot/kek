@@ -1,6 +1,6 @@
-package com.example.tupkalenko.trainee.project.domain.mvpbase;
+package com.example.tupkalenko.trainee.project.mvp;
 
-import com.example.tupkalenko.trainee.project.domain.navigation.Router;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.Router;
 
 import androidx.annotation.NonNull;
 
@@ -11,11 +11,7 @@ public interface BaseContract {
         void showLoading();
 
         void hideLoading();
-
-        void showRetry();
-
-        void hideRetry();
-
+        
         void showUnexpectedError(@NonNull Throwable throwable);
     }
 

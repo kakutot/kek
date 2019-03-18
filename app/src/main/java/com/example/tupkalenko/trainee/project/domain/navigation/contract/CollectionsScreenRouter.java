@@ -1,4 +1,4 @@
-package com.example.tupkalenko.trainee.project.domain.navigation;
+package com.example.tupkalenko.trainee.project.domain.navigation.contract;
 
 import com.example.tupkalenko.trainee.project.domain.entity.Collection;
 

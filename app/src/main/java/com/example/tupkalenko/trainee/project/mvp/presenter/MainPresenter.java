@@ -1,7 +1,8 @@
-package com.example.tupkalenko.trainee.project.presentation.main;
+package com.example.tupkalenko.trainee.project.mvp.presenter;
 
-import com.example.tupkalenko.trainee.project.domain.navigation.MainRouter;
-import com.example.tupkalenko.trainee.project.presentation.base.BasePresenter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.MainRouter;
+import com.example.tupkalenko.trainee.project.mvp.BasePresenter;
+import com.example.tupkalenko.trainee.project.mvp.contract.MainContract;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Scheduler;

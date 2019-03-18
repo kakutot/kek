@@ -1,10 +1,8 @@
-package com.example.tupkalenko.trainee.project.presentation.base;
+package com.example.tupkalenko.trainee.project.mvp;
 
 import android.util.Log;
 
-import com.example.tupkalenko.trainee.project.RxExecutor;
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
-import com.example.tupkalenko.trainee.project.domain.navigation.Router;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.Router;
 
 import java.util.Objects;
 

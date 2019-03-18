@@ -1,10 +1,10 @@
 import com.example.tupkalenko.trainee.project.domain.entity.City;
 import com.example.tupkalenko.trainee.project.domain.entity.Collection;
-import com.example.tupkalenko.trainee.project.domain.navigation.CollectionsScreenRouter;
+import com.example.tupkalenko.trainee.project.domain.navigation.contract.CollectionsScreenRouter;
 import com.example.tupkalenko.trainee.project.domain.repository.CityRepository;
 import com.example.tupkalenko.trainee.project.domain.repository.CollectionRepository;
-import com.example.tupkalenko.trainee.project.presentation.collections.CollectionsContract;
-import com.example.tupkalenko.trainee.project.presentation.collections.CollectionsPresenter;
+import com.example.tupkalenko.trainee.project.mvp.contract.CollectionsContract;
+import com.example.tupkalenko.trainee.project.mvp.presenter.CollectionsPresenter;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,19 +28,19 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith (MockitoJUnitRunner.class)
 public class CollectionsPresenterTest {
 
-    private final static String EMPTY_CITY_NAME = "";
-    private final static String FAKE_CITY_NAME = "testCityName";
-    private final static String FAKE_CITY_COUNTRY_NAME = "testCountryName";
-    private final static int FAKE_CITY_ID = 1;
-    private final static int FAKE_COUNTRY_ID = 1;
+    private static final String EMPTY_CITY_NAME = "";
+    private static final String FAKE_CITY_NAME = "testCityName";
+    private static final String FAKE_CITY_COUNTRY_NAME = "testCountryName";
+    private static final int FAKE_CITY_ID = 1;
+    private static final int FAKE_COUNTRY_ID = 1;
 
-    private final static int FAKE_COLLECTION_ID = 2;
-    private final static String FAKE_IMAGE_URL = "url";
-    private final static int FAKE_RESULTS_COUNT = 1;
-    private final static String FAKE_TITLE = "title";
+    private static final int FAKE_COLLECTION_ID = 2;
+    private static final String FAKE_IMAGE_URL = "url";
+    private static final int FAKE_RESULTS_COUNT = 1;
+    private static final String FAKE_TITLE = "title";
 
     @Mock
     private CityRepository cityRepository;
@@ -60,7 +60,7 @@ public class CollectionsPresenterTest {
     private City fakeCity;
     private Collection fakeCollection;
     private List<Collection> fakeCollections;
-    
+
     @Before
     public void setup() {
         initFakeCity();
@@ -129,7 +129,7 @@ public class CollectionsPresenterTest {
         verify(router, never()).showRestaurantsScreen(any(Collection.class));
     }
 
-    @Test(expected = UnsupportedOperationException.class)
+    @Test (expected = UnsupportedOperationException.class)
     public void testNavigateBackUnsupported() {
         collectionsPresenter.navigateBack();
     }

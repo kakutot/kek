@@ -1,5 +1,7 @@
 package com.example.tupkalenko.trainee.project.domain.entity;
 
+import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -47,5 +49,22 @@ public final class Collection {
 
     public void setResultsCount(int resultsCount) {
         this.resultsCount = resultsCount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Collection that = (Collection)o;
+
+        return id == that.id &&
+               resultsCount == that.resultsCount &&
+               Objects.equals(title, that.title) &&
+               Objects.equals(imageUrl, that.imageUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, imageUrl, resultsCount);
     }
 }

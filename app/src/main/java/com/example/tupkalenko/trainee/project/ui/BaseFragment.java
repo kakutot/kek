@@ -1,11 +1,11 @@
-package com.example.tupkalenko.trainee.project.presentation.base;
+package com.example.tupkalenko.trainee.project.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tupkalenko.trainee.project.domain.mvpbase.BaseContract;
+import com.example.tupkalenko.trainee.project.mvp.BaseContract;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;

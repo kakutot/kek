@@ -1,4 +1,4 @@
-package com.example.tupkalenko.trainee.project.presentation.main;
+package com.example.tupkalenko.trainee.project.ui.activity;
 
 import android.os.Bundle;
 
