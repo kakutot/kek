@@ -88,7 +88,8 @@ public class MockCollectionRepository implements CollectionRepository {
 
         for(Map.Entry<Pair<Integer, String>, Collection> entry : collections.entrySet()) {
             if (entry.getKey().first != null &&
-                    entry.getKey().first == cityId && counter++ < count) {
+                entry.getKey().first == cityId &&
+                counter++ < count) {
                 result.add(entry.getValue());
             }
         }
