@@ -38,13 +38,13 @@ public class MockRestaurantRepository implements RestaurantRepository {
                               new UserRating());
 
             putMockRestaurantWithCollectionId(i + 1,
-                              "test" + (i + 1),
-                              new Location(),
-                              (float)i,
-                              "$",
-                              generateRandomString(i * 4),
-                              new UserRating(),
-                              i + 1);
+                                              "test" + (i + 1),
+                                              new Location(),
+                                              (float)i,
+                                              "$",
+                                              generateRandomString(i * 4),
+                                              new UserRating(),
+                                              i + 1);
         }
     }
 
@@ -110,11 +110,11 @@ public class MockRestaurantRepository implements RestaurantRepository {
             }
 
             if (entry.getKey().second != null &&
-                entry.getKey().second.first != null &&
-                entry.getKey().second.first.equals(restaurantName) &&
-                entry.getKey().second.second != null &&
-                entry.getKey().second.second == collectionId &&
-                counter++ < count) {
+                    entry.getKey().second.first != null &&
+                    entry.getKey().second.first.equals(restaurantName) &&
+                    entry.getKey().second.second != null &&
+                    entry.getKey().second.second == collectionId &&
+                    counter++ < count) {
                 result.add(entry.getValue());
             }
         }
